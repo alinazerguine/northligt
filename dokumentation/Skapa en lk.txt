@@ -1,0 +1,7 @@
+1. Logga in som root via SSH 22 och 
+2. skriv cd .. för att gå bak ett från /root
+3. Gå till mappen länken ska vara i (ex. /volume1/web/vallmoklinikenUTV/
+4. skriv in följande:
+DS215j> ln -s /volume1/photo/web_images_vallmokliniken images
+
+Mappen är osynlig i Diskstation, men synlig i windows. Går inte att kopiera den.

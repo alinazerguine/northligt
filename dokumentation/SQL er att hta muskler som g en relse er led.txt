@@ -1,0 +1,12 @@
+SELECT DISTINCT `muscle` FROM `myologi` WHERE `function` LIKE '%. Abduktion i art. Humeri%' OR '>Abduktion i art. Humeri%';
+
+SELECT DISTINCT `muscle` FROM `myologi` WHERE `function` LIKE '%. Adduktion i art. Humeri%' OR '>Adduktion i art. Humeri%'
+OR `f_unilateral` LIKE '%. Adduktion i art. Humeri%' OR '>Adduktion i art. Humeri%'
+OR `f_bilateral` LIKE '%. Adduktion i art. Humeri%' OR '>Adduktion i art. Humeri%';
+
+SELECT DISTINCT `muscle` FROM `myologi` WHERE `function` COLLATE utf8_bin like '%Adduktion i art. Humeri%';
+
+SELECT DISTINCT `muscle` FROM `myologi` WHERE `function` COLLATE utf8_bin like '%Abduktion i art. Humeri%'
+OR `f_unilateral` COLLATE utf8_bin like '%Abduktion i art. Humeri%'
+OR `f_bilateral` COLLATE utf8_bin like '%Abduktion i art. Humeri%';
+

@@ -1,0 +1,368 @@
+/*!
+ * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Nyanser av rÃ¶tt
+/* Hallstahammars hemsida: #ee3a43
+
+/* Global Styles */
+html, body {
+	height: 100%;
+}
+
+body {
+	padding-top: 50px;
+	/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.carousel-inner>.item>a>img {
+	line-height: 1;
+}
+
+.img-portfolio {
+	margin-bottom: 30px;
+}
+
+.img-hover:hover {
+	opacity: 0.8;
+}
+/* Gällande meny från clean-blog.css */
+.navbar-custom {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.navbar-custom .navbar-brand {
+	font-weight: 400;
+}
+
+.navbar-custom .nav li a {
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+@media only screen and (min-width: 768px) {
+	.navbar-custom {
+		background: transparent;
+		border-bottom: 1px solid transparent;
+	}
+	.navbar-custom .navbar-brand {
+		color: white;
+		padding: 20px;
+	}
+	.navbar-custom .navbar-brand:hover, .navbar-custom .navbar-brand:focus {
+		color: rgba(255, 255, 255, 0.8);
+	}
+	.navbar-custom .nav li a {
+		color: white;
+		padding: 20px;
+	}
+	.navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
+		color: rgba(255, 255, 255, 0.8);
+	}
+}
+
+@media only screen and (min-width: 1170px) {
+	.navbar-custom {
+		-webkit-transition: background-color 0.3s;
+		-moz-transition: background-color 0.3s;
+		transition: background-color 0.3s;
+		/* Force Hardware Acceleration in WebKit */
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		-ms-transform: translate3d(0, 0, 0);
+		-o-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+	.navbar-custom.is-fixed {
+		/* when the user scrolls down, we hide the header right above the viewport */
+		position: fixed;
+		top: -61px;
+		background-color: rgba(255, 255, 255, 0.9);
+		border-bottom: 1px solid #f2f2f2;
+		-webkit-transition: -webkit-transform 0.3s;
+		-moz-transition: -moz-transform 0.3s;
+		transition: transform 0.3s;
+	}
+	.navbar-custom.is-fixed .navbar-brand {
+		color: #404040;
+	}
+	.navbar-custom.is-fixed .navbar-brand:hover, .navbar-custom.is-fixed .navbar-brand:focus
+		{
+		color: #0085a1;
+	}
+	.navbar-custom.is-fixed .nav li a {
+		color: #404040;
+	}
+	.navbar-custom.is-fixed .nav li a:hover, .navbar-custom.is-fixed .nav li a:focus
+		{
+		color: #0085a1;
+	}
+	.navbar-custom.is-visible {
+		/* if the user changes the scrolling direction, we show the header */
+		-webkit-transform: translate3d(0, 100%, 0);
+		-moz-transform: translate3d(0, 100%, 0);
+		-ms-transform: translate3d(0, 100%, 0);
+		-o-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+	}
+}
+
+/* Meny "Nav Bar" */
+.navbar-inverse {
+	/*background-color: #db241f;
+  border-bottom: thin solid #080808;*/
+	background-color: rgba(0, 0, 0, 0);
+	border-bottom: thin solid rgba(0, 0, 0, 0);
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .5) 0%,
+		rgba(0, 0, 0, .0001) 100%);
+	background-image: -o-linear-gradient(top, rgba(0, 0, 0, .5) 0%,
+		rgba(0, 0, 0, .0001) 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .5)),
+		to(rgba(0, 0, 0, .0001)));
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%,
+		rgba(0, 0, 0, .0001) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000',
+		endColorstr='#00000000', GradientType=1);
+	background-repeat: repeat-x;
+	/*border-color: #080808;
+  border-width: 2px;
+  border-bottom: thin solid #080808;*/
+}
+/* Logo Vallmokliniken rÃ¤tt placerad i menyn*/
+.navbar-brand {
+	float: left;
+	height: 50px;
+	padding: 7px -100px; /**/
+	font-size: 24px;
+	margin-top: -0px;
+	/*line-height: 50px;*/
+}
+
+element.style {
+	
+}
+
+@media ( min-width : 768px) .navbar>.container .navbar-brand , . navbar
+	>.container-fluid .navbar-brand {
+	margin-left
+	:
+	 
+	-20
+	px
+	;
+	
+
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus,
+	.navbar-inverse .navbar-nav>.active>a:hover {
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0);
+	text-decoration: underline;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #FFF;
+}
+
+.navbar-inverse .navbar-text {
+	color: #FFF;
+}
+/*navbar brand icomoon logo*/
+.navbar-brand-logo {
+	color: #db241f;
+	font-size: 36px;
+	margin-top: 10px;
+}
+
+@media ( min-width : 768px) {
+	.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand
+		{
+		margin-left: -20px;
+	}
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #FFF;
+	font-size: 14px;
+}
+
+@media ( max-width : 767px) {
+	.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+		color: #db241f;
+	}
+}
+
+.navbar-inverse .navbar-link {
+	color: #db241f;
+}
+
+.navbar-inverse .btn-link {
+	color: #29cc4c;
+}
+
+/* All Pages Header Images */
+#marginallheaders {
+	margin-top: -51px
+}
+
+/* Home Page Carousel */
+
+/* fÃ¥ bilderna att gÃ¥ in i menyn */
+header.carousel {
+	height: 50%;
+	margin-top: -51px;
+}
+
+header.carousel .item, header.carousel .item.active, header.carousel .carousel-inner
+	{
+	height: 100%;
+}
+
+header.carousel .fill {
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+
+/* Color on panels */
+.panel-default>.panel-heading {
+	color: #333;
+	background-color: #216496;
+	/* 	background-color: #dfe0e4;
+    background-color: #db241f;
+    background-color: #FF5B60;*/
+}
+/* Color for button on panels*/
+.btn-default {
+	color: #fff;
+	background-color: #1ace1a;
+	border-color: #63636300;
+}
+
+.btn-primary {
+	color: #333;
+	background-color: #FFF;
+	border-color: #636363;
+}
+/* Color on circle for Font Awesome */
+.text-primary {
+	color: #FFFFFF;
+}
+/* 404 Page Styles */
+.error-404 {
+	font-size: 100px;
+}
+
+/* Pricing Page Styles */
+.price {
+	display: block;
+	font-size: 50px;
+	line-height: 50px;
+}
+
+.price sup {
+	top: -20px;
+	left: 2px;
+	font-size: 20px;
+}
+
+.period {
+	display: block;
+	font-style: italic;
+}
+
+/* Footer Styles */
+footer {
+	margin: 50px 0;
+}
+
+/* Responsive Styles */
+@media ( max-width :991px) {
+	.customer-img, .img-related {
+		margin-bottom: 30px;
+	}
+}
+
+@media ( max-width :767px) {
+	.img-portfolio {
+		margin-bottom: 15px;
+	}
+	header.carousel .carousel {
+		height: 70%;
+	}
+}
+
+/* Text on prices for cash paying method */
+.kontantamedel {
+	color: grey;
+	font-size: 12px;
+}
+/* Text for caption */
+.caption-text {
+	font-size: 40px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+/* Larger font for list ul*/
+.bigFontList {
+	font-size: 16px;
+}
+
+/* marginal fÃ¶r att centrera font icomoon rÃ¤tt i stora paneler*/
+.icomoon-panelhead {
+	margin-top: 30px;
+}
+/* Text fÃ¶r vÃ¤lkommen pÃ¥ startsidan */
+.page-header {
+	padding-bottom: 9px;
+	margin: 40px 0 20px;
+	border-bottom: 1px solid #eee;
+}
+/* Hindra att man scrollar pÃ¥ kartan */
+.overlay {
+	background: transparent;
+	position: relative;
+	width: 100%;
+	height: 350px; /* your iframe height */
+	top: 350px; /* your iframe height */
+	margin-top: -350px; /* your iframe height */
+}
+/* Color on font for sevices I yet cannot offer*/
+.inactive-service {
+	color: #AFADAD;
+}
+/* Image header make full width*/
+.imageHeader-fullwidth {
+	width: 100%;
+}
+/*Färg på url-länkar*/
+a {
+	color: #1ace1a;
+	text-decoration: none;
+}
+/*Färg på priser boxen i mitten*/
+.panel-primary {
+	border-color: #ddd;
+}
+
+.panel-primary>.panel-heading {
+	color: #333;
+	background-color: #fff;
+	border-color: #ddd;
+}
+/*Slut - Färg på priser boxen i mitten*/
+h1, .h1 {
+	font-size: 30px;
+}
