@@ -30,6 +30,8 @@
                     } else {
                         $query = "INSERT into target_tbl (email, userid) VALUES ('".$email."', '$userid')";
                         mysqli_query($link, $query);
+
+                        insert_To_emailtargettbl($link, $email, $userid);
                         $n ++;
                     }                    
                 }               
@@ -62,15 +64,50 @@
                     } else {
                         $query = "INSERT into target_tbl (email, userid) VALUES ('".$email."', '$userid')";
                         mysqli_query($link, $query);
+                        insert_To_emailtargettbl($link, $email, $userid);
                         $n ++;
                     }
                 }
                 
             }
             array_push($errors, $n." emails are successfully added, ".$dup." emails are duplicated");
-        }   
-            
+        }
+   
     }
     function validateEmail($email) {
         return filter_var($email, FILTER_VALIDATE_EMAIL);
+    }
+
+    function generateEmail($company, $url){
+        $message = '<p>Greetings</p>'.
+            '<p>On behalf of your '.$company.', North light conducts a survey of customer satisfaction. '.$company.' has provided us with your e-mail address.</p>'.
+            '<p>Your participation is of course voluntary, but your opinion can help '.$company.' to improve its service.</p>'.
+            '<p>Therefore, it would be helpful if you wanted to participate in the survey.</p>'.
+            '<p>Click on the link below to start:</p>'.
+            '<p><a href="#">'. $url . '</></p>'.
+            '<p>Thank you for your participation.</p>';
+        return $message;
+    }
+    /**
+     * Insert Data to emailtotarget_tbl with parameters
+     * 
+     */
+    function insert_To_emailtargettbl($link, $target_email, $userid) {
+        $placeid = "";
+        $company = "";
+        $url = "links here";
+
+        //Get placeid and company name by userid
+        $query = "SELECT * FROM users_tbl WHERE userid=".$userid;
+        $results = mysqli_query($link, $query);
+        if (mysqli_num_rows($results) == 1) {
+            $user = mysqli_fetch_assoc($results);
+            $placeid = $user["placeid"];
+            $company = $user["company_name"];
+        }
+        $date = date('Y-m-d H:i:s'); //current date time
+        $email_content = generateEmail($company, $url);
+        //insert to emailtotarget_tbl
+        $query = "INSERT into emailtotarget_tbl (target_email, userid, company_name, email_content, creation_timestamp) VALUES ('".$target_email."', '$userid', '$company', '$email_content', '$date')";
+        mysqli_query($link, $query);
     }
