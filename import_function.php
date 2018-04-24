@@ -108,6 +108,6 @@
         $date = date('Y-m-d H:i:s'); //current date time
         $email_content = generateEmail($company, $url);
         //insert to emailtotarget_tbl
-        $query = "INSERT into emailtotarget_tbl (target_email, userid, company_name, email_content, creation_timestamp) VALUES ('".$target_email."', '$userid', '$company', '$email_content', '$date')";
+        $query = "INSERT into emailtotarget_tbl (target_email, userid, company_name, placeid, email_content, creation_timestamp) VALUES ('".$target_email."', '$userid', '$company', '$placeid','$email_content', '$date')";
         mysqli_query($link, $query);
     }
