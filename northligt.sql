@@ -18,18 +18,24 @@ USE `northligt`;
 
 -- Dumping structure for table northligt.emailtotarget_tbl
 CREATE TABLE IF NOT EXISTS `emailtotarget_tbl` (
+  `eid` int(11) NOT NULL AUTO_INCREMENT,
   `target_email` varchar(50) NOT NULL,
   `userid` int(11) NOT NULL,
   `company_name` varchar(100) NOT NULL,
+  `placeid` varchar(50) NOT NULL,
+  `email_content` text,
   `creation_timestamp` datetime NOT NULL,
+  `email_sent` char(2) NOT NULL DEFAULT 'N',
   `sent_timestamp` datetime NOT NULL,
   `responded` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Somehow know if target has responded - listen if user enters link? If ''Y'' - stop sending',
   `reminder_sent_count` tinyint(2) NOT NULL DEFAULT '0',
+  `hashid` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`eid`),
   KEY `FK_emailtotarget_tbl_users_tbl` (`userid`),
   CONSTRAINT `FK_emailtotarget_tbl_users_tbl` FOREIGN KEY (`userid`) REFERENCES `users_tbl` (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
--- Dumping data for table northligt.emailtotarget_tbl: ~0 rows (approximately)
+-- Dumping data for table northligt.emailtotarget_tbl: ~2 rows (approximately)
 /*!40000 ALTER TABLE `emailtotarget_tbl` DISABLE KEYS */;
 /*!40000 ALTER TABLE `emailtotarget_tbl` ENABLE KEYS */;
 
@@ -41,16 +47,8 @@ CREATE TABLE IF NOT EXISTS `target_tbl` (
   CONSTRAINT `FK_target_tbl_users_tbl` FOREIGN KEY (`userid`) REFERENCES `users_tbl` (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table northligt.target_tbl: ~7 rows (approximately)
+-- Dumping data for table northligt.target_tbl: ~4 rows (approximately)
 /*!40000 ALTER TABLE `target_tbl` DISABLE KEYS */;
-INSERT INTO `target_tbl` (`email`, `userid`) VALUES
-	('test123@gmail.com', 1),
-	('user1@hotmail.com', 1),
-	('user2@outlook.com', 1),
-	('helo@gmail.com', 1),
-	('sio@sino.com', 1),
-	('sino@sin.com', 1),
-	('esdf@gmail.com', 1);
 /*!40000 ALTER TABLE `target_tbl` ENABLE KEYS */;
 
 -- Dumping structure for table northligt.users_tbl
@@ -68,18 +66,12 @@ CREATE TABLE IF NOT EXISTS `users_tbl` (
   `subscription_start` varchar(100) DEFAULT '0',
   `subscription_end` varchar(100) DEFAULT '0',
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table northligt.users_tbl: ~7 rows (approximately)
+-- Dumping data for table northligt.users_tbl: ~1 rows (approximately)
 /*!40000 ALTER TABLE `users_tbl` DISABLE KEYS */;
 INSERT INTO `users_tbl` (`userid`, `username`, `userpass`, `company_name`, `email`, `address`, `phone`, `creation_timestamp`, `edited_timestamp`, `placeid`, `subscription_start`, `subscription_end`) VALUES
-	(1, 'test', 'e10adc3949ba59abbe56e057f20f883e', 'Venus', 'test@gmail.com', 'sdf', 'wer', '2018-04-17 08:30:07', '2018-04-17 11:18:47', '18922324', '0', '0'),
-	(2, 'test1', 'e10adc3949ba59abbe56e057f20f883e', 'testcompany', 'test1@gmail.com', '', '', '2018-04-17 09:16:03', NULL, 'asdfasdf', '0', '0'),
-	(4, 'test4', 'e10adc3949ba59abbe56e057f20f883e', 'hello', 'test4@gmail.com', NULL, NULL, '2018-04-18 08:47:23', NULL, '123456789', '0', '0'),
-	(5, 'test5', 'e10adc3949ba59abbe56e057f20f883e', 'asdf', 'test5@gmail.com', NULL, NULL, '2018-04-18 08:53:43', NULL, 'asdf', '0', '0'),
-	(6, 'test6', 'e10adc3949ba59abbe56e057f20f883e', 'asdf', 'test6@gmail.com', NULL, NULL, '2018-04-18 08:56:25', NULL, 'asdf', '0', '0'),
-	(7, 'sd', 'e10adc3949ba59abbe56e057f20f883e', 'sdf', 'we@gs.com', NULL, NULL, '2018-04-18 08:57:22', NULL, 'sdfsd', '0', '0'),
-	(8, 'a231', 'e10adc3949ba59abbe56e057f20f883e', 'dasf21', 'sdf@sdf.ciis2', 'sdfasd', 'a2334', '2018-04-18 08:58:38', '2018-04-18 09:23:40', '155dsf', '0', '0');
+	(1, 'test', 'e10adc3949ba59abbe56e057f20f883e', 'Venus', 'test@gmail.com', 'sdf', 'wer', '2018-04-17 08:30:07', '2018-04-17 11:18:47', '18922324', '0', '0');
 /*!40000 ALTER TABLE `users_tbl` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
